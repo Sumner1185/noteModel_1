@@ -11,12 +11,24 @@
 
 (function(exports) {
   function testReturnsNotesArray() {
-    var list2 = new NoteList();
+    var list = new NoteList();
 
-    if(list2.returnNotes().length != 1) {
+    if(list.returnNotes().length !== 0) {
     throw new Error("that didn't work");
     }
   }
   testReturnsNotesArray();
 
+})(this);
+
+(function(exports) {
+  function testAddNewNoteAndPushToNotes() {
+    var list = new NoteList();
+    list.addNewNote("testy");
+
+    if(list.notes.length !== 1) {
+      throw new Error("Run!!!!");
+    }
+  }
+  testAddNewNoteAndPushToNotes();
 })(this);

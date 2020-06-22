@@ -14,9 +14,10 @@
   function testReturnsText() {
     var noteTwo = new Note("I love code");
 
-    if(noteTwo.returnText !== "I love code") {
+    if(noteTwo.returnText() !== "I love code") {
       throw new Error("Sheeeeeeet");
     }
   };
+
   testReturnsText();
-})
+})(this);
