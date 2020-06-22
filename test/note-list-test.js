@@ -8,3 +8,15 @@
   }
   testListIsEmptyArray();
 })(this);
+
+(function(exports) {
+  function testReturnsNotesArray() {
+    var list2 = new NoteList();
+
+    if(list2.returnNotes().length != 1) {
+    throw new Error("that didn't work");
+    }
+  }
+  testReturnsNotesArray();
+
+})(this);
