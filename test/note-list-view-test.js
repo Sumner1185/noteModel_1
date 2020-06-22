@@ -10,12 +10,24 @@
 })(this);
 
 (function(exports) {
-  function returnsStringOfHtmlOfNotes() {
-  var view = new NoteListView();
-  var add = view.list.addNewNote("testeroony")
-  if(view.returnString() != "testeroony" ) {
-    throw new Error("who knows at this point")
+  function returnsStringOfSingleNoteEntry() {
+    var view = new NoteListView();
+    view.list.addNewNote("testeroony")
+    if(view.returnString() != "<ul><li><div>testeroony</div></li></ul>") {
+      throw new Error("who knows at this point")
+    }
   }
-}
-  returnsStringOfHtmlOfNotes();
+  returnsStringOfSingleNoteEntry();
+})(this);
+
+(function(exports) {
+  function returnsStringOfMultiNoteEntry() {
+    var view = new NoteListView();
+    view.list.addNewNote("testeroony");
+    view.list.addNewNote("test");
+    if(view.returnString() != "<ul><li><div>testeroony</div></li><li><div>test</div></li></ul>") {
+      throw new Error("We've come this far")
+    }
+  }
+  returnsStringOfMultiNoteEntry();
 })(this);
